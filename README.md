@@ -9,8 +9,8 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Real-world usage of AI/ML](docs/ai-in-real-world.md)
 
 ## Generative AI
+- [Overview & Concepts](docs/gen-ai/generative-ai.md
 ### LLMs
-- [Overview & Concepts](docs/gen-ai/generative-ai.md)
 - [Prompt Engineering Guide](docs/gen-ai/prompt-engineering-resources.md)
 - [LLMs Architecture](docs/gen-ai/finetune-llms.md)
 - [LLMs Benchmarking & Evaluation](docs/gen-ai/evaluation-metrics.md)
@@ -18,10 +18,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Fine-tune LLMs](docs/gen-ai/finetune-llms.md)
 ### Diffusion Models - Text-to-Image/Videos, Image-to-Image/Videos
 - [Latent Diffusion Models](docs/gen-ai/latent-diffusion.md)
- 
-## Basics - Algebra & Statistics
-- [Algebra](docs/stats/algebra.md)
-- [Statistics & Probability](docs/stats/probability.md)
+- [Mulitmodality](docs/multimodality/multimodality.md)
 
 ## Machine Learning
 - [Concepts](docs/ml/ml-concepts.md)
@@ -42,12 +39,11 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 ## Neural Networks
 - [Concepts](docs/nn/nn-deeplearning.md)
 - [Convolutional Neural Networks](docs/nn/cnn.md)
-- [GAN](docs/nn/)
-- [Diffusion](docs/nn/)
 
-## Multimodality (Text + Image + Audio)
-- [Mulitmodality](docs/multimodality/multimodality.md)
-  
+## Basics - Algebra & Statistics
+- [Algebra](docs/stats/algebra.md)
+- [Statistics & Probability](docs/stats/probability.md)
+
 ## AI/ML - Interview Notes
 - [ML Concepts](docs/interview-notes/interview-notes.md)
 - [ML Models](docs/interview-notes/models.md)
