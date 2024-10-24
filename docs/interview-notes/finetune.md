@@ -1,3 +1,22 @@
+### What is Parameter-Efficient Fine-Tuning (PEFT)?
+
+### Can you explain the differences between LoRA and QLoRA? How do you implement LoRA in a model?
+        
+### What is the role of Unsloth in accelerating fine-tuning processes? How does it improve memory efficiency and speed?
+
+### How do you handle padding in sequences during training? ### Discuss strategies for effective padding management.
+
+### What are system tokens in Llama Models?
+
+### What is the significance of setting a maximum sequence length? How does it affect model performance and memory usage?
+
+### Explain Proximal Policy Optimization (PPO) and its application in fine-tuning LLMs? What are its advantages compared to other optimization algorithms?
+
+### What is Direct Preference Optimization (DPO), and how does it differ from PPO How do you perform progress logging during model training?
+
+### What is the purpose of the Accelerate library in training LLMs? How does it facilitate distributed training?
+    
+### Can you explain how to use the SFTTrainer class from Hugging Face's trl library? What are its key features?
 
 ### What are ommon pitfalls when fine-tuning LLMs?
 
