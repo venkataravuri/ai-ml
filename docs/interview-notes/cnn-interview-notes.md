@@ -21,9 +21,11 @@ Key Features of Vision Transformers:
 
 [Backpropagation in a convolutional layer](https://towardsdatascience.com/backpropagation-in-a-convolutional-layer-24c8d64d8509)
 
-### Explain the significance of the RELU Activation function in Convolution Neural Network.
+### What is the role of activation functions in CNNs? Compare common activation functions like ReLU, Sigmoid, and Tanh, focusing on their advantages.
 
-As a consequence, the usage of ReLU helps to prevent the exponential growth in the computation required to operate the neural network. If the CNN scales in size, the computational cost of adding extra ReLUs increases linearly   
+- **ReLU** is the most popular and commonly used activation function in CNN. It outputs the input value if it is positive or returns zero. ReLU helps to prevent the exponential growth in the computation required to operate the neural network.
+- **tanh** function is a type of activation function that transforms the input value between -1 and 1.
+- **Sigmoid** function transforms the input to a range between 0 and 1
 
 ### Why do we use a Pooling Layer in a CNN?
 
