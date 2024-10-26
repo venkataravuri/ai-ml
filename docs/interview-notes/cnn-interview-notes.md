@@ -15,7 +15,15 @@ Key Features of Vision Transformers:
 - **Self-Attention Mechanism**: Allows the model to weigh the importance of different patches based on their relationships, enabling it to capture global context effectively.
 - **Positional Encoding**: Adds information about the position of each patch to maintain the spatial arrangement of image data.
 
+<img src="https://cdn.prod.website-files.com/5d7b77b063a9066d83e1209c/60ee08a4779abb22e9bb4326_timeline.png" width="50%" height="50%" />
+
 ---
+
+### Are CNNs invariant to translation, rotation, and scaling?
+
+A **translation** is a geometric transformation that shifts all points in a given direction and by the same distance. 
+
+<img src="https://www.baeldung.com/wp-content/uploads/sites/4/2022/11/fig1.png" width="30%" height="30%" />
 
 ### Describe the process of backpropagation in CNNs. Explain how gradients are calculated and weights are updated through convolutional layers?
 
