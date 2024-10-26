@@ -1,4 +1,19 @@
 
+CNNs use convolutional layers to automatically **learn spatial hierarchies** of features from images, making them particularly effective for image classification, object detection, and image segmentation tasks.
+
+Key Features of CNNs:
+
+- **Convolutional Layers**: Utilize filters to detect features like edges, textures, and shapes in images.
+- **Pooling Layers**: Reduce the spatial dimensions of the input, maintaining essential features while minimizing computational complexity.
+- **Fully Connected Layers**: Combine the features learned by previous layers to make final predictions.
+
+Vision Transformers (ViTs) apply the transformer architecture to image data. Instead of convolutions, ViTs treat images as sequences of patches and utilize self-attention mechanisms to learn relationships between these patches.
+
+Key Features of Vision Transformers:
+
+- **Patch Embedding**: Images are divided into fixed-size patches, which are flattened and projected into a high-dimensional space.
+- **Self-Attention Mechanism**: Allows the model to weigh the importance of different patches based on their relationships, enabling it to capture global context effectively.
+- **Positional Encoding**: Adds information about the position of each patch to maintain the spatial arrangement of image data.
 
 ---
 
