@@ -37,7 +37,11 @@ https://medium.com/@abhishekjainindore24/pooling-and-their-types-in-cnn-4a4b8a7a
 
 ### What is the size of the feature map for a given input size image, Filter Size, Stride, and Padding amount?
 
-We can compute the spatial size of the output volume as a function of the input volume size (W), the receptive field size of the Conv Layer neurons (F), the stride with which they are applied (S), and the amount of zero padding used (P) on the border. You can convince yourself that the correct formula for calculating how many neurons “fit” is given by (W−F+2P)/S+1. For example for a 7x7 input and a 3x3 filter with stride 1 and pad 0 we would get a 5x5 output. With stride 2 we would get a 3x3 output. L
+Spatial size of the output volume as a function of the input volume size (W), the receptive field size of the Conv Layer neurons (F), the stride with which they are applied (S), and the amount of zero padding used (P) on the border.
+
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*8f9kLdyhhtaIV3j6Nt5UVQ.png" />
+
+For example, for a 7x7 input and a 3x3 filter with stride 1 and pad 0 we would get a 5x5 output. With stride 2 we would get a 3x3 output.
 
 ### An input image has been converted into a matrix of size 12 X 12 along with a filter of size 3 X 3 with a Stride of 1. Determine the size of the convoluted matrix.
 
