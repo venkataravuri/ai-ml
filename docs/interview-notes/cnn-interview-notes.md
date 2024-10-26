@@ -53,25 +53,13 @@ Padding refers to the process of adding a layer of zeros/ones to the sides of a 
 
 To sum up, ‘valid’ padding means no padding. The output size of the convolutional layer shrinks depending on the input size & kernel size. On the contrary, ‘same’ padding means using padding.   
 
-### What are the different types of Pooling? Explain their characteristics.
-
-
-### Does the size of the feature map always reduce upon applying the filters? Explain why or why not.
-
-
 ### What is Stride? What is the effect of high Stride on the feature map?
 
 Stride refers to the number of steps the filter matrix can shift after evaluating the convolution between input and filter. When the stride=1, the filter matrix shifts by one pixel; if it is 2, then the filter matrix must shift by two pixels.
 
-
 ### Explain the role of the flattening layer in CNN.
 
 The flattening layer is usually towards the end of the CNN architecture, and it is used to transform all the two-dimensional matrices into a single lengthy vector. The output of this layer is passed to the fully-connected layer.
-
-
-### List down the hyperparameters of a Pooling Layer.
-
-The hyperparameters for a pooling layer are Filter size, Stride, Max, or average pooling.   
 
 ### What is the role of the Fully Connected (FC) Layer in CNN?
 
@@ -80,15 +68,6 @@ Fully connected layers serve as the final stage in a CNN architecture. They conn
 This vector is then passed through an activation function, such as a softmax function, to generate the final output probabilities for each clas
 
 In an image classification task with 10 classes, the fully connected layer will output a 10-dimensional vector, with each element representing the probability of the input belonging to a specific class.
-
-### Briefly explain the two major steps of CNN i.e, Feature Learning and Classification. 
-
-
-### Let us consider a Convolutional Neural Network having three different convolutional layers in its architecture as –
-
-
-### Explain the significance of “Parameter Sharing” and “Sparsity of connections” in CNN.
-
 
 ### What’s the difference between batch normalization and dropout layers in a CNN?
 
@@ -103,16 +82,21 @@ Dropout is a _regularization technique_ that randomly drops out some fraction of
 
 Zero padding is a technique used in Convolutional Neural Networks (CNNs) to preserve the original input size.
 
-It involves adding zeros to the borders of the input feature map when it is being processed by the kernel of a CNN.
-
-The main purpose of using zero padding is to avoid losing information at the boundaries of the input feature map and to control the shrinkage of dimension after applying filters larger than 1x1.
+It involves adding zeros to the borders of the input feature map when it is being processed by the kernel of a CNN. The main purpose of using zero padding is to avoid losing information at the boundaries of the input feature map and to control the shrinkage of dimension after applying filters larger than 1x1.
 
 ### When would you prefer a 1D convolution over 2D convolutions?
 
-1D convolutions are typically used when the input data is 1D, such as a time series or text. 2D convolutions are typically used when the input data is 2D, such as an image.
+- 2D convolutions are typically used when the input data is 2D, such as an image.
+- 1D convolutions are typically used when the input data is 1D, such as a time series or text.
+
+### Explain the significance of “Parameter Sharing” and “Sparsity of connections” in CNN.
+
 
 ### Which CNNs are you used?
 
  EfficientNet-B0
  
 https://theaisummer.com/cnn-architectures/
+
+**References**
+- https://www.digitalocean.com/community/tutorials/filters-in-convolutional-neural-networks
