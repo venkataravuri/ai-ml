@@ -17,6 +17,24 @@ Key Features of Vision Transformers:
 
 <img src="https://cdn.prod.website-files.com/5d7b77b063a9066d83e1209c/60ee08a4779abb22e9bb4326_timeline.png" width="50%" height="50%" />
 
+## Object Detection
+
+https://yolo-docs.readthedocs.io/en/latest/0_get_start/1_introduction.html
+
+### Faster R-CNN
+
+Faster R-CNN is a single unified model, the architecture is comprised of two modules:
+- RPN (Region Proposal Network) : Convolutional neural network for proposing regions and the type of object to consider in the region.
+- Fast R-CNN : Convolutional neural network for extracting features from the proposed regions and outputting the bounding box and class labels.
+
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*olfhVIVKJeeeaQmxNagQQg.jpeg" width="30%" height="30%" />
+
+### YOLO (You Only Look Once)
+
+https://yolo-docs.readthedocs.io/en/latest/0_get_start/1_introduction.html
+
+### SSD (Single Shot Detector)
+
 ---
 
 ### Are CNNs invariant to translation, rotation, and scaling?
