@@ -1,53 +1,12 @@
 # Finetune LLMs
 
-## Concepts
+## LLM Finetune Method - Parameter-Efficient Finetuning Method (PEFT)
 
-### Prompt Tuning
-
-#### Hard Prompting (Prompt Engineering)
-
-Prompt engineering is a process that allows to engineer guidelines for a pre-trained model to implement a narrow task. A human engineer's instructions are fed to an LLM for it to accomplish a specific task. These instructions are called hard prompts.
-
-For example, suppose we are interested in translating an English sentence into German. We can ask the model in various different ways, as illustrated below.
-An example of hard prompt tuning, that is, rearranging the input to get better outputs.
-
-```
-1) Translate the English sentence '{English Sentence}' into German language '{German Translation}'
-2) English: '{English Sentence}' | German: '{German Translation}'
-3) From English to German: '{English Sentence}' -> '{German Translation}'
-```
-
-Now, this concept illustrated above is referred to as **hard prompt tuning** since we directly change the discrete input tokens, which are not differentiable.
-
-[Source](https://magazine.sebastianraschka.com/p/understanding-parameter-efficient) 
-
-#### Soft Prompting
-
-In contrast to hard prompt tuning, soft prompt tuning (Lester et al. 2021) concatenates the embeddings of the input tokens with a trainable tensor that can be optimized via backpropagation to improve the modeling performance on a target task.
-
-- Prompt tuning (different from prompting) appends a tensor to the embedded inputs of a pretrained LLM.
-- The tensor is then tuned to optimize a loss function for the finetuning task and data while all other parameters in the LLM remain frozen.
-
-Soft prompt tuning is significantly more parameter-efficient than full-finetuning.
-
-### Prefix Tuning
-
-Prefix tuning is to add trainable tensors to each transformer block instead of only the input embeddings, as in soft prompt tuning.
-
-## In-context Learning vs Instruction Fine-tuning
-
-In-context learning is a technique that leverages the LLM’s ability to learn from the context of the input. By providing a few prompt-completion examples before the actual query, the LLM can infer the task and the desired output format from the examples. In-context learning does not require any additional training of the model, but it relies on the model’s pre-trained knowledge and reasoning skills.
-
-Instruction fine-tuning is a strategic extension of the traditional fine-tuning approach. Model is trained on examples of instructions and how the LLM should respond to those instructions.
-
-## Parameter-Efficient Finetuning Methods
-
-The main idea behind prompt tuning, and parameter-efficient finetuning methods in general, is to add a small number of new parameters
-to a pretrained LLM and only finetune the newly added parameters to make the LLM perform better on,
+The main idea behind prompt tuning, and parameter-efficient finetuning methods in general, is to add a small number of new parameters to a pretrained LLM and only finetune the newly added parameters to make the LLM perform better on,
 - (a) a target dataset (for example, a domain-specific dataset like medical or legal documents)
 - and (b) a target task (for example, sentiment classification).
 
-## LoRA
+### LoRA
 
 LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a pre-trained model by **introducing low-rank matrices** into the model's layers. LoRA adds trainable low-rank matrices to selected layers, allowing the model to adapt to new tasks without the need for extensive computational resources.
 
@@ -59,9 +18,27 @@ LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a
  - If your task heavily relies on understanding context, prioritize attention layers.
  - Later layers: Task-specific adaptations
 
+**Layers Typically Targeted for LoRA Adapters**
+
+- **Attention Layers**:
+  - Query and Value Projections: These layers are crucial for the model's ability to focus on relevant parts of the input data.
+  - Commonly Used Modules: q_proj, k_proj, v_proj, and o_proj are often targeted as they directly influence the attention mechanism.
+- **Feedforward Layers**:
+  - Linear Layers: These include any linear transformations within the model, such as those used in feedforward networks after attention layers.
+  - Examples: gate_proj, down_proj, and up_proj are frequently included in the adaptation process.
+- **Output Layers**:
+  - Final Linear Layer: This layer is responsible for producing the final output of the model and can also benefit from fine-tuning through LoRA.
+
 ## Quantization
 
 - [Ultimate Guide to Fine-Tuning in PyTorch : Part 1 — Pre-trained Model and Its Configuration](https://rumn.medium.com/part-1-ultimate-guide-to-fine-tuning-in-pytorch-pre-trained-model-and-its-configuration-8990194b71e)
+
+
+## Intstruction Tuning
+
+Instruction Fine-tuning aka. In-context Learning is a technique that leverages the LLM’s ability to learn from the context of the input. By providing a few prompt-completion examples before the actual query, the LLM can infer the task and the desired output format from the examples. In-context learning does not require any additional training of the model, but it relies on the model’s pre-trained knowledge and reasoning skills.|
+
+Instruction fine-tuning is a strategic extension of the traditional fine-tuning approach. Model is trained on examples of instructions and how the LLM should respond to those instructions.
 
 ### Finetune Llama 2
 
