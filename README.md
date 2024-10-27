@@ -10,7 +10,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Overview & Concepts](docs/gen-ai/generative-ai.md)
 ### LLMs
 - [Prompt Engineering Guide](docs/gen-ai/prompt-engineering-resources.md)
-- [LLMs Architecture](docs/gen-ai/finetune-llms.md)
+- [LLMs Architecture](docs/gen-ai/llms-architecture.md)
 - [LLMs Benchmarking & Evaluation](docs/gen-ai/evaluation-metrics.md)
 - [LLM-powered Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
 - [Fine-tune LLMs](docs/gen-ai/finetune-llms.md)
