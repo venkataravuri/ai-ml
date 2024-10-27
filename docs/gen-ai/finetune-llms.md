@@ -128,3 +128,40 @@ to a pretrained LLM and only finetune the newly added parameters to make the LLM
 - [Llama_2_7b_chat_hf_sharded_bf16_INFERENCE.ipynb](https://colab.research.google.com/drive/1zxwaTSvd6PSHbtyaoa7tfedAS31j_N6m)
 - [fLlama_bnb_Inference.ipynb](https://colab.research.google.com/drive/1Ow5cQ0JNv-vXsT-apCceH6Na3b4L7JyW?usp=sharing#scrollTo=tMmDSVVaIfPF)
 - []()
+
+
+### Prompt to Generate Fine-tune Code
+
+You are an AI and ML expert and developer, your job is to generate code for following use case,
+Use Case: Finetune an open-source large language models (LLMs) such as latest Llama3 chat model for multi tasks such as Classification, Chatbot, Question Answering, Multi-choice question and answering and more. The model should be finetuned using below mentioned finetune datasets.
+
+Below are few finetuning guidelines,
+1. Use relevant HuggingFace libraries for finetuning.
+2. The foundation LLM model and datasets should be downloaded from Huggingface, sometimes downloading models require Huggingface login and provide consent.
+3. Employ finetuning techniques such as PEFT, LORA, QLORA and any modern techniques.
+4. Use wandb.ai weights and bias tool for reporting progress and metrics
+5. Finetune model for 2 epochs, use learning rate scheduler
+6. Split data into training and validation set with 80% used for training and rest for validation. Validate finetuned model with validation dataset
+7. Save & upload finetuned model to Huggingface
+8. Use FSDP (Fully Sharded Data Parallel) to fine tune model. Assume that there are 3 nodes each having 4 A100 GPUs. The code should support distributed training across multiple nodes and gpus.
+9. To stop retrain again due to crashes, do frequent check pointing.
+10. Use model optimization techniques such as torch.compile, mixed precision or relevant techniques
+11. Use Huggingface accelerate library
+12. Finetune is planned to be executed on GPU renting services such as runpod.ai. Generate code that can be executed on such GPU renting services.
+13. Compute evalution metrics and capture them.
+14. Generate code as python project, separate behaviors into different modules so that it can be parameterized and packaged.
+    
+Finetune Datasets:
+Below 3 Huggingface datasets should be used for finetuning,
+
+1A) Dataset Name: infinite-dataset-hub/TextClaimsDataset
+1B) Description: The 'TextClaimsDataset' is a curated collection of insurance claim descriptions where each text snippet is labeled according to its relevance to actual insurance claims. The dataset aims to assist machine learning practitioners in training models to classify texts as either 'Claim' or 'Not a Claim'. This classification can be pivotal for fraud detection systems in the insurance industry, helping to identify potential fraudulent claims from legitimate ones.
+1C) Supported Tasks: Classification
+
+2A) Dataset Name: PolyAI/banking77
+2B) Dataset composed of online banking queries annotated with their corresponding intents. BANKING77 dataset provides a very fine-grained set of intents in a banking domain. It comprises 13,083 customer service queries labeled with 77 intents. It focuses on fine-grained single-domain intent detection.
+2C) Supported Tasks: Intent classification, intent detection
+
+3A) tau/commonsense_qa
+3B) CommonsenseQA is a new multiple-choice question answering dataset that requires different types of commonsense knowledge to predict the correct answers . It contains 12,102 questions with one correct answer and four distractor answers. The dataset is provided in two major training/validation/testing set splits: "Random split" which is the main evaluation split, and "Question token split"
+3C) Supported Tasks: multiple-choice question answering
