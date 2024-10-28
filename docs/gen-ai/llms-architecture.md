@@ -49,6 +49,8 @@ To solve this memory bandwidth problem, multi-query attention (MQA) was created 
 
 ## Sliding Attention
 
+<img src="https://datasciencedojo.com/wp-content/uploads/sliding-window-attention.png" height="60%" width="60%" />
+
 ## Flash Attention
 
 **Transformers** are slow and memory-hungry on **long sequences**, since the time and memory complexity of self-attention are **quadratic in sequence length**.
