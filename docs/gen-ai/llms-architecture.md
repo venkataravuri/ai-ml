@@ -1,6 +1,9 @@
-# Transformer Architecture
+# LLM Transformer Architecture
 
-All most all LLMs in market are based variants of the original [Vaswani et al. (2017)](https://arxiv.org/abs/1706.03762) paper that introduced transformers presented an encoder-decoder architecture.
+:star::star::star::star::star: **LLM Visualization**: https://bbycroft.net/llm
+
+
+Most of LLMs in market are based variants of the original [Vaswani et al. (2017)](https://arxiv.org/abs/1706.03762) paper that introduced transformers presented an encoder-decoder architecture.
 
 Transformer models produce a probability distribution over all potential next words given an input string of text. 
 
