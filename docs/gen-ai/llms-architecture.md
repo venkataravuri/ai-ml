@@ -35,9 +35,7 @@ Given a query, lookup for closest keys, return a weighted sum of associated valu
 
 ## Multi-head Attention
 
-<img src="https://user-images.githubusercontent.com/16246821/79481335-f70d9400-802c-11ea-83f7-6f470fe46196.png" />
-
-<img src="https://camo.githubusercontent.com/c0d5357cfe7029b123efe716a0c99d92d05956097c743449457fdf157c5ab3ca/68747470733a2f2f6d6368726f6d69616b2e6769746875622e696f2f61727469636c65732f323031372f5365702f31322f5472616e73666f726d65722d417474656e74696f6e2d69732d616c6c2d796f752d6e6565642f696d672f4d756c7469486561642e706e67" />
+<img src="https://user-images.githubusercontent.com/16246821/79481335-f70d9400-802c-11ea-83f7-6f470fe46196.png" height="70%" width="70%" />
 
 ## Cross Attention
 
