@@ -75,3 +75,10 @@ Here's a breakdown of how KV caching fits into this process:
 <img src="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/_images/kv-cache-optimization.png" height="70%" width="70%" />
 
 <img src="https://martinlwx.github.io/img/kv_cache_4_steps.png" height="70%" width="70%" />
+
+#### Handling Memory Limitations in KV Cache
+
+One challenge with KV caching is that it requires memory for each token generated, which can be substantial for long sequences. Some approaches to manage this include:
+
+<img src="https://pic4.zhimg.com/v2-6312af05f3f22e735bb6845e67d9b447_r.jpg" height="70%" width="70%" />
+
