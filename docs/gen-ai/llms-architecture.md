@@ -71,3 +71,7 @@ Here's a breakdown of how KV caching fits into this process:
 - **Caching of Keys and Values**: After computing K and V for each token, these matrices are stored in a KV cache. This cache holds the keys and values for each token in the sequence, indexed by their position.
 - **Reuse in Subsequent Tokens**: For each new token generated (in sequential text generation or conversation), the model only computes the query (Q) for the current token. Instead of recalculating K and V for the entire sequence, it retrieves the cached K and V matrices from the previous steps.
 - **Attention Calculation**: The attention is then computed using the new query (Q) and the cached keys (K) and values (V). This allows the model to attend to the entire history of tokens without recomputing each one from scratch.
+
+<img src="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/_images/kv-cache-optimization.png" height="70%" width="70%" />
+
+<img src="https://martinlwx.github.io/img/kv_cache_4_steps.png" height="70%" width="70%" />
