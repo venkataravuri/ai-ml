@@ -33,17 +33,19 @@ In self-attention, every word in sequence pays attention to every other word to 
 
 Given a query, lookup for closest keys, return a weighted sum of associated values.
 
-## Multi-head Attention
+### Multi-head Attention
 
 <img src="https://user-images.githubusercontent.com/16246821/79481335-f70d9400-802c-11ea-83f7-6f470fe46196.png" height="70%" width="70%" />
 
-## Cross Attention
-
-## Grouped Query Attention
+### Grouped Query Attention
 
 GQA addresess memory bandwidth challenges during the autoregressive decoding of Transformer models. The primary issue stems from the need to load decoder weights and attention keys/values at each processing step, which consumes excessive memory.
 
 Read more about MPA & GPA at, [Grouped Query Attention](https://ai.plainenglish.io/understanding-llama2-kv-cache-grouped-query-attention-rotary-embedding-and-more-c17e5f49a6d7)
+
+### Multi-query attention (MQA) and the quality trade-off
+
+To solve this memory bandwidth problem, multi-query attention (MQA) was created where only one key-value head exists for multiple query heads. While MQA significantly reduces the memory load and improves inference speed, it comes at the expense of lower quality and training instability.
 
 ## Sliding Attention
 
@@ -61,6 +63,8 @@ Flash attention uses two techniques to speedup,
 <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ec9eb47-c496-4a15-b8b9-ed091de6c06e_1932x680.png" width="70%" height="70%" />
 
 Source: [FlashAttention challenges ML researchers to think about systems-level improvements](https://dailyink.substack.com/p/flashattention-challenges-ml-researchers) [Long-Sequence Attention with ⚡FlashAttention⚡](https://mlnotes.substack.com/p/long-sequence-attention-with-flashattention), 
+
+## Cross Attention
 
 ### KV Caching
 
