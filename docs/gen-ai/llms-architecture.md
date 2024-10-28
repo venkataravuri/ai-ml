@@ -62,3 +62,12 @@ Flash attention uses two techniques to speedup,
 Source: [FlashAttention challenges ML researchers to think about systems-level improvements](https://dailyink.substack.com/p/flashattention-challenges-ml-researchers) [Long-Sequence Attention with ⚡FlashAttention⚡](https://mlnotes.substack.com/p/long-sequence-attention-with-flashattention), 
 
 ### KV Caching
+
+To understand KV caching, it’s important to know how the self-attention mechanism operates within transformers. In each self-attention layer, a given input sequence is projected into three separate matrices: queries (Q), keys (K), and values (V). These projections allow the model to determine which parts of the sequence to attend to by computing attention scores between the queries and keys, which are then applied to the values to yield the output.
+
+Here's a breakdown of how KV caching fits into this process:
+
+- **Initial Computation**: When generating the first few tokens in a sequence, the model computes the attention matrices—Q, K, and V—for all tokens processed so far. This involves full computation of attention for these initial tokens.
+- **Caching of Keys and Values**: After computing K and V for each token, these matrices are stored in a KV cache. This cache holds the keys and values for each token in the sequence, indexed by their position.
+- **Reuse in Subsequent Tokens**: For each new token generated (in sequential text generation or conversation), the model only computes the query (Q) for the current token. Instead of recalculating K and V for the entire sequence, it retrieves the cached K and V matrices from the previous steps.
+- **Attention Calculation**: The attention is then computed using the new query (Q) and the cached keys (K) and values (V). This allows the model to attend to the entire history of tokens without recomputing each one from scratch.
