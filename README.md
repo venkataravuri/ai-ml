@@ -15,6 +15,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Fine-tune LLMs](docs/gen-ai/finetune-llms.md)
 - [Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
   - [AI Agent Architecture](docs/gen-ai/ai-agents-overview.md)
+  - [LangChain](docs/gen-ai/langchain.md)
 
 ### Diffusion Models - Text-to-Image/Videos, Image-to-Image/Videos
 - [Latent Diffusion Models](docs/gen-ai/latent-diffusion.md)
