@@ -12,3 +12,15 @@ These components include:
 - Memory: Storage and retrieval of chat history.
 - Chains: Linking multiple LangChain components
 - Agents: Agent Executor, Tools
+
+
+
+#### Tools
+
+Tools are interfaces that an agent can use to interact with the world. These tools can be generic utilities (e.g. search), other chains, or even other agents.
+
+Tools can be,
+- [Shell Tool](https://python.langchain.com/docs/integrations/tools/bash)
+- [Search Tools](https://python.langchain.com/docs/integrations/tools/ddg)
+- [Requests](https://python.langchain.com/docs/integrations/tools/requests)
+- Others ...
