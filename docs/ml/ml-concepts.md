@@ -232,30 +232,21 @@ In a deep learning network, batch normalization affects the output of the previo
 
 ## Distance Measurement in Text Mining
 
-Before any distance measurement, text have to be tokenzied.
+In NLP, To find the similarity among sentence or document.
 
-4 basic distance measurements:
+Before any distance measurement, text have to be tokenzied. 4 basic distance measurements:
 - Euclidean Distance
 - Cosine Distance
 - Jaccard Similarity
 
-In NLP, we also want to find the similarity among sentence or document. 
-
-<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*FTVRr_Wqz-3_k6Mk6G4kew.png" width="50% height="50%" />
-
-<img src="https://github.com/venkataravuri/ai-ml-notes/assets/3113165/51c46ddb-28b3-455e-93fb-6e532ffb0c31" />
+<img src="https://pbs.twimg.com/media/GXMwYt5W8AA8nQp?format=jpg&name=small" width="50%" height="50%" />
 
 
 |Euclidean Distance|Cosine similarity|Jaccard similarity|
 |---|---|---|
-|Comparing the shortest distance among two objects. It uses Pythagorean Theorem which learnt from secondary school.|Jaccard similarity is based on the ratio of the intersection to the union of the sets of words that represent the documents. The higher the ratio, the more similar the documents are. |Cosine similarity is based on the angle between two vectors that represent the documents. The closer the angle is to zero, the more similar the documents are. Cosine similarity is easy to compute, especially with sparse matrices, and it can capture the overall similarity of the documents regardless of their length.||
-|<img src="https://miro.medium.com/v2/resize:fit:640/0*Bd8VtxN8ql4qw4vo" weight="25%" height="25%" />|<img src="https://miro.medium.com/v2/resize:fit:1170/format:webp/1*MhX64CBNBUQdQyM30jiaYA.png" width="40%" height4050%" />
-||
-||Cosine similarity is calculated using only the dot product and magnitude of each vector, and is therefore affected only by the terms the two vectors have in common, whereas Euclidean has a term for every dimension which is non-zero in either vector.<br/>Cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of the angle between them. 
-<br/>It is thus a judgment of orientation and not magnitude (length)
-<br/>two vectors with the same orientation have a cosine similarity of 1 (The cosine of 0° is 1)
-<br/>two vectors oriented at 90° relative to each other have a similarity of 0
-<br/>and two vectors diametrically opposed have a similarity of -1, independent of their magnitude.||
+|<img src="https://miro.medium.com/v2/resize:fit:640/0*Bd8VtxN8ql4qw4vo" weight="25%" height="25%" />|<img src="https://miro.medium.com/v2/resize:fit:1170/format:webp/1*MhX64CBNBUQdQyM30jiaYA.png" width="40%" height="50%" />||
+|Shortest distance among two vectors. Uses Pythagorean Theorem learnt in secondary school.|Cosine similarity is based on the angle between two vectors that represent the documents. Cosine similarity is calculated using only the dot product and magnitude of each vector. It is thus a judgment of orientation and not magnitude (length)|Jaccard similarity is based on the ratio of the intersection to the union of the sets of words that represent the documents. | 
+||- Two vectors with the same orientation have a cosine similarity of 1 (The cosine of 0° is 1)<br/>- Two vectors oriented at 90° relative to each other have a similarity of 0<br/>- and Two vectors diametrically opposed have a similarity of -1, independent of their magnitude.|The higher the ratio, the more similar the documents are.|
 
 #### What is difference between Cosine Similarity & Ecludian Distance?
 
