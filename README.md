@@ -16,6 +16,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
   - [AI Agent Architecture](docs/gen-ai/ai-agents-overview.md)
   - [LangChain](docs/gen-ai/langchain.md)
+  - [Vector Databases](docs/vector-db.md)
 
 ### Diffusion Models - Text-to-Image/Videos, Image-to-Image/Videos
 - [Latent Diffusion Models](docs/gen-ai/latent-diffusion.md)
@@ -34,8 +35,6 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [NLP](https://github.com/venkataravuri/awesome-tech-articles-blogs/blob/master/topics/architecture-design/search.md)
   - [Lexical/Keyword Search](https://github.com/venkataravuri/awesome-tech-articles-blogs/blob/master/topics/architecture-design/search.md)
   - [Semantic/Vector Search](https://github.com/venkataravuri/awesome-tech-articles-blogs/blob/master/topics/architecture-design/search.md)
-      - [Vector Search Indexes](docs/vector-search-index.md)
-      - [Vector DBs](https://github.com/venkataravuri/ai-ml-models/blob/main/5-vector-db/Readme.md)
   
 ## Neural Networks
 - [Concepts](docs/nn/nn-deeplearning.md)
