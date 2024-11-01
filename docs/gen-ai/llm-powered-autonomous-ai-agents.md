@@ -1,10 +1,15 @@
-# LLM-powered Apps aka. Autonomous AI Agents
+# Autonomous AI Agents
 
-> In near future, Large Language Models (LLMs) will be virtually part of every software product to make them more autonomous and enhance user experience (UX).
+Autonomous AI Agents are goal-driven, self-executing software to plan, execute and priortize tasks to achieve a certain goal, where LLMs are used as **reasoning engines**.. They translate natural language prompts into actions and execute them.
 
-> "_A.I. might not replace you, but a person who uses A.I. could._"
+Here are few browser-based autonomous LLM agents,
+- [AgentGPT](https://agentgpt.reworkd.ai/) - Assemble, configure, and deploy autonomous AI Agents in your browser.
+- [BabyAGI](https://babyagi.org/) - AI-powered task management system that uses OpenAI and Pinecone APIs to create, prioritize, and execute tasks.
+- [Godmode.space](https://godmode.space/) - Explore the Power of Generative Agents on Godmode.space. Inspired by Auto-GPT and BabyAGI. Supports GPT-3.5 & GPT-4.
+- [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT)(non-browser based) - A program, driven by GPT-4, chains together LLM "thoughts", to autonomously achieve whatever goal you set. As one of the first examples of GPT-4 running fully autonomously, Auto-GPT pushes the boundaries of what is possible with AI.
 
-🚧 <strike>Doc is under construction</strike> 🚧
+Autonomous agents achieve specified goals by breaking it into tasks, execute them independently without human intervention. Agents use a LLM to determine which actions to take and in what order. The agent creates a **Chain-of-Thought** sequence on the fly by decomposing the user request.
+
 
 **Table of Contents**
 - [Introduction](#introduction)
@@ -19,74 +24,6 @@
 - [Demo 1: Autonomous Travel Agent](#example-autonomous-travel-agent)
 - [Demo 2: Tanzu Kubernetes Autonomous AI Agent](#example-tanzu-kubernetes-autonomous-ai-agent)
 - [Self-Learning Tutorials](#self-learning-tutorials)
-
-## Introduction
-
-Large Language Models have potential use beyond text generation, summarization, and code generation. LLMs can be used as **reasoning engines**. They can be,
-- Turned into a powerful general problem solver.
-- Leveraged to automate complex workflows with several intervined tasks.
-- Could power autonomous systems.
-
-LLMs powering idea of Autonomous AI Agents. These Autonomous LLM "agents" or "copilots" are new generation of AI assistants which can perform complex tasks when commanded by a human, without needing close supervision. They can make logical decisions, and handle a number of tasks without consistent human intervention.
-
-After LLMs are out in market, a new role "AI Engineer" is emerging, with accountability to productize large language models. AI Engineer role is to integrate developed models into software products.
-
-<img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa81555af-0b76-4a61-9b53-595e3d47580a_1005x317.png" width="75%" height="75%" alt="AI Engineer"/>
-
-Source: [Latent Space](https://www.latent.space/p/ai-engineer)
-
-## What are Autonomous LLM Agents?
-
-“Autonomous” LLM agents are goal-driven, self-executing software to plan, execute and priortize tasks to achieve a certain goal. They translate natural language prompts into actions and execute them.
-
-Here are few browser-based autonomous LLM agents,
-- [AgentGPT](https://agentgpt.reworkd.ai/) - Assemble, configure, and deploy autonomous AI Agents in your browser.
-- [BabyAGI](https://babyagi.org/) - AI-powered task management system that uses OpenAI and Pinecone APIs to create, prioritize, and execute tasks.
-- [Godmode.space](https://godmode.space/) - Explore the Power of Generative Agents on Godmode.space. Inspired by Auto-GPT and BabyAGI. Supports GPT-3.5 & GPT-4.
-- [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT)(non-browser based) - A program, driven by GPT-4, chains together LLM "thoughts", to autonomously achieve whatever goal you set. As one of the first examples of GPT-4 running fully autonomously, Auto-GPT pushes the boundaries of what is possible with AI.
-
-Autonomous agents achieve specified goals by breaking it into tasks, execute them independently without human intervention. Agents use a LLM to determine which actions to take and in what order. The agent creates a **Chain-of-Thought** sequence on the fly by decomposing the user request.
-
-## How do Autonomous LLM Agents (Or) Apps Work?
-
-Agents make use of LLMs, tools & memory to perform actions in autonomous fashion. LLMs act as agent’s brain, wherein tools enable an agent to take certain actions. Agents follow a Chain-of-Thought reasoning approach to decompose a problem into sequence of steps. 
-
-<img src="assets/ai-agents-overiew.png" width="60%" height="60%" alt="AI Agents Overview"/>
-
-Agents are autonomous with regards to,
-1. Plan steps to solve a problem or achieve a goal using chain-of-thought reasoning.
-2. For each step in steps:
-    1. Decide which **tool** to accomplish the step
-    2. Use tool to peform best course of **action** and record **observation**.
-    3. Observation is then passed back into agent, and it decides what step to take next.
-3. Agent repeats "Action" -> "Observation" -> "Thought" cycle, until it reaches satisfactory answer.
-
-<img src="assets/agent-architecture.png" width="60%" height="60%" alt="AI Agents Components" />
-
-## How to build Autonomous LLM Agents (Or) Apps?
-
-Critical components of autonomous agent are,
-
-#### Task Planning
-
-Agent decomposes complex tasks or goals into smaller steps. Task decomposing is done through LLM prompting. Different prompting techniques can be employeed such as,
-1. ReAct - Reason and Act. See LangChain prompt template [here](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/agents/react/wiki_prompt.py).
-2. Modular Reasoning, Knowledge and Language (MRKL) prompt. See LangChain prompt template [here](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/agents/mrkl/prompt.py)
-3. [Plan and execute](https://python.langchain.com/docs/modules/agents/agent_types/plan_and_execute)
-
-#### Tools
-
-Tools are interfaces that an agent can use to interact with the world. These tools can be generic utilities (e.g. search), other chains, or even other agents.
-
-Tools can be,
-- [Shell Tool](https://python.langchain.com/docs/integrations/tools/bash)
-- [Search Tools](https://python.langchain.com/docs/integrations/tools/ddg)
-- [Requests](https://python.langchain.com/docs/integrations/tools/requests)
-- Others ...
-
-#### Memory
-
-Chains and Agents are stateless, meaning that they treat each incoming query independently. Memory involves keeping a concept of state around throughout a user's interactions with an language model.
 
 ### Frameworks & Libraries
 
@@ -160,3 +97,11 @@ A sample autonoums agent that peforms Tanzu Kubernetes automation activities.
 
 - [LangChain tutorial #1: Build an LLM-powered app in 18 lines of code](https://blog.streamlit.io/langchain-tutorial-1-build-an-llm-powered-app-in-18-lines-of-code/)
 - [LangChain tutorial #4: Build an Ask the Doc app](https://blog.streamlit.io/langchain-tutorial-4-build-an-ask-the-doc-app/)
+
+## AI Roles
+
+After LLMs are out in market, a new role "AI Engineer" is emerging, with accountability to productize large language models. AI Engineer role is to integrate developed models into software products.
+
+<img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa81555af-0b76-4a61-9b53-595e3d47580a_1005x317.png" width="75%" height="75%" alt="AI Engineer"/>
+
+Source: [Latent Space](https://www.latent.space/p/ai-engineer)
