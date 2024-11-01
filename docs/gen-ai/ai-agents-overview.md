@@ -8,11 +8,19 @@ The structure and design pattern of an LLM program is commonly called **cognitiv
 
 The key components in AI Agentic framework are:
 
-- _Propose action_: the LLM generates text to respond directly to a user or to pass to a function.
-- _Execute action_: your code invokes other software to do things like query a database or call an API.
-- _Observe_: react to the response of the tool call by either calling another function or responding to the user.
-
 <img src="agent-framework.png" height="70%" width="70%" />
+
+- **Planning**
+    - _Subgoal and decomposition_: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.
+    - _Reflection and refinement_: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.
+
+- **Memory**
+    - _Short-term memory_: I would consider all the in-context learning (See Prompt Engineering) as utilizing short-term memory of the model to learn.
+    - _Long-term memory_: This provides the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval.
+
+- **Tool use**
+    - The agent learns to call external APIs for extra information that is missing from the model weights (often hard to change after pre-training), including current information, code execution capability, access to proprietary information sources and more.
+---
 
 ### ReAct Agent
 
