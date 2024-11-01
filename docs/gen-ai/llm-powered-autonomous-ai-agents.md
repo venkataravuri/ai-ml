@@ -39,38 +39,6 @@ LangChain framework components,
 
 <img src="assets/langchain-components.png" width="60%" height="60%" alt="LangChain Components"/>
 
-### Vector Datatabases
-
-#### Why Vector Databases needed in context of LLMs.
-
-By default, the LLMs bases its responses on textual content it has ingested during training. The training data may not include company's private data resulting inaccurate answer. To make LLM base its answer on private unseen data, we can agument user query with more context. For example, a legal document, a technical manual, or search results. We can then instruct the model to generate its answer based on that data. 
-
-To faster agument data relevant to user query, you can use 'Search Engines'. But they are only capable of keyword search.
-
-Vector databases provide efficient and quicker way to augument models with relevant context informaton. They have advanced indexing and search algorithms top perform efficient similiarity searches. 
-
-#### What is a vector?
-A vector is an array of numbers like [0, 1, 2, 3, 4, … ]. Vector can represent more complex objects such as words, sentences, images, and audio files in an embedding.
-
-#### What is Word Embedding? 
-In the context of large language models, embeddings represent text as a dense vector of numbers to capture the meaning of words. They map the semantic meaning of words together or similar features into vectors. These embeddings can then be used for search engines, recommendation systems, and generative AIs such as ChatGPT. 
-
-More concepts,
-- [What is Tokenization?](https://ankur3107.github.io/blogs/intro-to-tokenization-using-openai-chatgpt/)
-- [Which tokenization method ChatGPT uses?](https://huggingface.co/learn/nlp-course/chapter6/5?fw=pt)
-- [What is difference between Tokens & Word Embeddings?](https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037)
-
-- Vector databases can measure the distance between two vectors, which defines their relationship. Small distances suggest high relatedness, while larger distances suggest low relatedness.
-- Vector databases enhance the memory of LLMs thorugh context injection. Prompt augmentation feeds LLMs with contextual data.
-
-<img src="assets/vector-db-llms.png" width="50%" height="50%" alt="Vector DBs"/>
-
-Most popular vector databases are,
-
-| Pinecone | Chroma | Weaviate |
-| --- | --- | --- |
-| Pinecone is a cloud-based vector database designed to efficiently store, index and search extensive collections of high-dimensional vectors. | Chroma is an open source vector database that provides a fast and scalable way to store and retrieve embeddings. <br/>Chroma is designed to be lightweight and easy to use, with a simple API and support for multiple backends, including RocksDB and Faiss (Facebook AI Similarity Search) | Weaviate is an open source vector database designed to build and deploy AI-powered applications. Weaviate’s key features include support for semantic search and knowledge graphs and the ability to automatically extract entities and relationships from text data.|
-
 ## Example: Autonomous Travel Agent
 
 An autonomous travel agent powered by LLMs such as ChatGPT to automate airline ticket booking process.
