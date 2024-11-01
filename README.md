@@ -12,8 +12,10 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Prompt Engineering Guide](docs/gen-ai/prompt-engineering-resources.md)
 - [LLMs Architecture](docs/gen-ai/llms-architecture.md)
 - [LLMs Benchmarking & Evaluation](docs/gen-ai/evaluation-metrics.md)
-- [LLM-powered Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
 - [Fine-tune LLMs](docs/gen-ai/finetune-llms.md)
+- [Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
+  - [AI Agent Architecture](docs/gen-ai/ai-agents-overview.md)
+
 ### Diffusion Models - Text-to-Image/Videos, Image-to-Image/Videos
 - [Latent Diffusion Models](docs/gen-ai/latent-diffusion.md)
 - [Mulitmodality](docs/multimodality/multimodality.md)
