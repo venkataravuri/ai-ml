@@ -1,5 +1,5 @@
 
-## LangChain
+## LangChain, LangGraph, LangFuse
 
 LangChain introduces **modular abstractions** for essential components to interact with language models. These components include:
 
@@ -22,3 +22,5 @@ Tools can be,
 - [Search Tools](https://python.langchain.com/docs/integrations/tools/ddg)
 - [Requests](https://python.langchain.com/docs/integrations/tools/requests)
 - Others ...
+
+https://colab.research.google.com/github/langfuse/langfuse-docs/blob/main/cookbook/integration_langgraph.ipynb
