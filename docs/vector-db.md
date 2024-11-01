@@ -1,3 +1,8 @@
+
+
+
+### Vector Search
+
 A vector index is a condensed form of raw vectors that allow efficient, rapid searches.
 
 Indices come in many forms and are created by different algorithmic approaches.
