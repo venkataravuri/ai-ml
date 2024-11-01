@@ -18,10 +18,10 @@ The key components in AI Agentic framework are:
 
 The ReAct agent is a great prototypical design for this, as it prompts the language model using a repeated thought, act, observation loop:
 
-  Thought: I should call Search() to see the current score of the game.
-  Act: Search("What is the current score of game X?")
-  Observation: The current score is 24-21
-  ... (repeat N times)
+    Thought: I should call Search() to see the current score of the game.
+    Act: Search("What is the current score of game X?")
+    Observation: The current score is 24-21
+    ... (repeat N times)
 
 This takes advantage of _Chain-of-thought prompting to make a single action choice per step_.
 
