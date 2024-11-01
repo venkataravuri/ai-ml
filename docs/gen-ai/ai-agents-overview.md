@@ -12,14 +12,7 @@ The key components in AI Agentic framework are:
 - _Execute action_: your code invokes other software to do things like query a database or call an API.
 - _Observe_: react to the response of the tool call by either calling another function or responding to the user.
 
-
-## LangChain
-
-LangChain introduces **modular abstractions** for essential components required to interact with language models.
-
-Planning
-
-    Subgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.
+<img src="agent-framework.png" height="70%" width="70%" />
 
 ### ReAct Agent
 
@@ -39,7 +32,7 @@ This takes advantage of _Chain-of-thought prompting to make a single action choi
 - A **planner**, which prompts an LLM to generate a multi-step plan to complete a large task.
 - **Executor(s)**, which accept the user query and a step in the plan and invoke 1 or more tools to complete that task.
 
-<img src="" height="60%" width="60%" />
+<img src="plan-execute.png" height="60%" width="60%" />
 
 Once execution is completed, the agent is called again with a re-planning prompt, letting it decide whether to finish with a response or whether to generate a follow-up plan.
 
