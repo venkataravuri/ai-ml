@@ -1,6 +1,8 @@
 # Autonomous AI Agents
 
-Autonomous AI Agents are goal-driven, self-executing software to plan, execute and priortize tasks to achieve a certain goal, where LLMs are used as **reasoning engines**.. They translate natural language prompts into actions and execute them.
+Agents are systems that use LLMs as reasoning engines to determine which actions to take and the inputs necessary to perform the action. After executing actions, the results can be fed back into the LLM to determine whether more actions are needed, or whether it is okay to finish.
+
+The are goal-driven, self-executing software to plan, execute and priortize tasks to achieve a certain goal.
 
 Here are few browser-based autonomous LLM agents,
 - [AgentGPT](https://agentgpt.reworkd.ai/) - Assemble, configure, and deploy autonomous AI Agents in your browser.
