@@ -1,6 +1,10 @@
 
 ## LangChain, LangGraph, LangFuse
 
+https://blog.langchain.dev/semi-structured-multi-modal-rag/
+
+https://www.together.ai/blog/multimodal-document-rag-with-llama-3-2-vision-and-colqwen2
+
 LangChain introduces **modular abstractions** for essential components to interact with language models. These components include:
 
 - **Schema**: Schema pertains to the fundamental data types and structures utilized across the codebase. Text, ChatMessages, Examples, and Document.
