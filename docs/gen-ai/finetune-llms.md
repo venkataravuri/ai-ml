@@ -1,8 +1,10 @@
 # Finetune LLMs
 
-## LLM Finetune Method - Parameter-Efficient Finetuning Method (PEFT)
+## LLM Finetune Methods
 
-The main idea behind prompt tuning, and parameter-efficient finetuning methods in general, is to add a small number of new parameters to a pretrained LLM and only finetune the newly added parameters to make the LLM perform better on,
+### Parameter-Efficient Finetuning Method (PEFT)
+
+Parameter-efficient finetuning method adds a small number of new parameters to a pretrained LLM and only finetunes newly added parameters to make the LLM perform better on,
 - (a) a target dataset (for example, a domain-specific dataset like medical or legal documents)
 - and (b) a target task (for example, sentiment classification).
 
@@ -11,7 +13,6 @@ The main idea behind prompt tuning, and parameter-efficient finetuning methods i
 LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a pre-trained model by **introducing low-rank matrices** into the model's layers. LoRA adds trainable low-rank matrices to selected layers, allowing the model to adapt to new tasks without the need for extensive computational resources.
 
 - Preservation of Pre-trained Knowledge: The original model retains its pre-trained weights, and only the low-rank matrices are trained, allowing for faster adaptation to new tasks.
-- LoRA is an efficient way to fine-tune large models by introducing low-rank adaptations that require fewer resources while preserving the knowledge embedded in pre-trained weights.
 
 #### How to Choose Layers for Adding Adapters?
 
@@ -29,18 +30,11 @@ LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a
 - **Output Layers**:
   - Final Linear Layer: This layer is responsible for producing the final output of the model and can also benefit from fine-tuning through LoRA.
 
-## Quantization
+## Quantization & QLoRA
 
 - [Ultimate Guide to Fine-Tuning in PyTorch : Part 1 — Pre-trained Model and Its Configuration](https://rumn.medium.com/part-1-ultimate-guide-to-fine-tuning-in-pytorch-pre-trained-model-and-its-configuration-8990194b71e)
 
-
-## Intstruction Tuning
-
-Instruction Fine-tuning aka. In-context Learning is a technique that leverages the LLM’s ability to learn from the context of the input. By providing a few prompt-completion examples before the actual query, the LLM can infer the task and the desired output format from the examples. In-context learning does not require any additional training of the model, but it relies on the model’s pre-trained knowledge and reasoning skills.|
-
-Instruction fine-tuning is a strategic extension of the traditional fine-tuning approach. Model is trained on examples of instructions and how the LLM should respond to those instructions.
-
-### Finetune Llama 2
+### Finetune LLMs Notebooks & Guides
 
 - [LLaMA-2 from the Ground Up](https://cameronrwolfe.substack.com/p/llama-2-from-the-ground-up)
 - [Fine-Tuning Llama-2 LLM on Google Colab: A Step-by-Step Guide.](https://medium.com/@csakash03/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-cf7bb367e790)
@@ -51,30 +45,42 @@ Instruction fine-tuning is a strategic extension of the traditional fine-tuning 
 - [fLlama_bnb_Inference.ipynb](https://colab.research.google.com/drive/1Ow5cQ0JNv-vXsT-apCceH6Na3b4L7JyW?usp=sharing#scrollTo=tMmDSVVaIfPF)
 - []()
 
+### Distributed Fine-tuning LLMs
+
+#### FSDP
 
 ### Prompt to Generate Fine-tune Code
 
-You are an AI and ML expert and developer, your job is to generate code for following use case,
-Use Case: Finetune an open-source large language models (LLMs) such as latest Llama3 chat model for multi tasks such as Classification, Chatbot, Question Answering, Multi-choice question and answering and more. The model should be finetuned using below mentioned finetune datasets.
+<details>
+
+<summary>Fine-tune Code Gen Prompt:</summary>
+
+### Prompt
+
+Ignore previous instructions. Now your role is an AI and ML engineer, your job is to generate code for following use case,
+Use Case:
+Finetune an open-source large language models (LLMs) such as latest Llama 3.2 chat model for multi tasks such as Classification, Chatbot, Question Answering, Multi-choice question and answering and more.
 
 Below are few finetuning guidelines,
-1. Use relevant HuggingFace libraries for finetuning.
-2. The foundation LLM model and datasets should be downloaded from Huggingface, sometimes downloading models require Huggingface login and provide consent.
-3. Employ finetuning techniques such as PEFT, LORA, QLORA and any modern techniques.
+1. Use HuggingFace libraries for finetuning LLM.
+2. The foundation LLM model and datasets should be downloaded from Huggingface, sometimes downloading models require Huggingface login and providing consent.
+3. Employ finetuning techniques such as PEFT, QLORA and/or any modern techniques that you aware off.
 4. Use wandb.ai weights and bias tool for reporting progress and metrics
 5. Finetune model for 2 epochs, use learning rate scheduler
-6. Split data into training and validation set with 80% used for training and rest for validation. Validate finetuned model with validation dataset
+6. Split data into training and validation set with 80% used for training and rest for validation. Validate finetuned model with validation dataset.
 7. Save & upload finetuned model to Huggingface
-8. Use FSDP (Fully Sharded Data Parallel) to fine tune model. Assume that there are 3 nodes each having 4 A100 GPUs. The code should support distributed training across multiple nodes and gpus.
+8. Use FSDP (Fully Sharded Data Parallel) to fine tune model. Assume that there are 3 machine or nodes and each having 4 A100 GPUs. The code should support distributed training across multiple nodes and GPUs.
 9. To stop retrain again due to crashes, do frequent check pointing.
 10. Use model optimization techniques such as torch.compile, mixed precision or relevant techniques
-11. Use Huggingface accelerate library
-12. Finetune is planned to be executed on GPU renting services such as runpod.ai. Generate code that can be executed on such GPU renting services.
-13. Compute evalution metrics and capture them.
-14. Generate code as python project, separate behaviors into different modules so that it can be parameterized and packaged.
-    
-Finetune Datasets:
-Below 3 Huggingface datasets should be used for finetuning,
+11. To improve training speed include techniques such as flash attention, KV cache, grouped attention, sliding attention. Choose whichever is best for the model.
+12. Apply DPO technique for finetuning.
+13. Finetune is planned to be executed on GPU renting services such as runpod.ai. Generate code that can be executed on such GPU renting services.
+14. Compute evalution metrics such as GLUE, BLEU, Perpelixity relvant to task and dataset and capture them through wandb.ai
+15. Generate code as python project, separate behaviors into different modules so that it can be parameterized and packaged.
+
+The model should be finetuned using below mentioned finetune datasets. 
+
+Finetune Huggingface Datasets:
 
 1A) Dataset Name: infinite-dataset-hub/TextClaimsDataset
 1B) Description: The 'TextClaimsDataset' is a curated collection of insurance claim descriptions where each text snippet is labeled according to its relevance to actual insurance claims. The dataset aims to assist machine learning practitioners in training models to classify texts as either 'Claim' or 'Not a Claim'. This classification can be pivotal for fraud detection systems in the insurance industry, helping to identify potential fraudulent claims from legitimate ones.
@@ -87,3 +93,5 @@ Below 3 Huggingface datasets should be used for finetuning,
 3A) tau/commonsense_qa
 3B) CommonsenseQA is a new multiple-choice question answering dataset that requires different types of commonsense knowledge to predict the correct answers . It contains 12,102 questions with one correct answer and four distractor answers. The dataset is provided in two major training/validation/testing set splits: "Random split" which is the main evaluation split, and "Question token split"
 3C) Supported Tasks: multiple-choice question answering
+
+</details>
