@@ -92,9 +92,18 @@ Finetune Huggingface Datasets:
 
 ### Distributed Fine-tuning LLMs across Multiple Nodes & GPUs
 
+Model parallelism splits the model across multiple GPUs. This is especially useful for models that are too large to fit into the memory of a single GPU.
+
+- **Pipeline Parallelism**: Splits the model into different layers that are processed by different GPUs in a pipelined fashion.
+- **Tensor Parallelism**: Splits the individual layers themselves across multiple GPUs to parallelize the computation.
+
+#### Data Parallelism
+
 #### FSDP - Fully Sharded Data Parallel
 
 Fully Sharded Data Parallel (FSDP) enables efficient training of large neural networks across multiple GPUs and nodes by distributing the model's parameters across devices. 
+
+PyTorch Fully Sharded Data Parallel (FSDP) primarily utilizes data parallelism with some aspects of tensor parallelism.
 
 2 GPUs per node and a total of 2 nodes (4 GPUs total) 
 
