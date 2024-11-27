@@ -49,11 +49,9 @@ LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a
 
 #### FSDP
 
-### Prompt to Generate Fine-tune Code
-
 <details>
 
-<summary>Fine-tune Code Gen Prompt:</summary>
+<summary>Fine-tune Code Generation Prompt:</summary>
 
 ### Prompt
 
