@@ -36,19 +36,6 @@ LoRA, or Low-Rank Adaptation, is a technique that modifies the architecture of a
 
 ### Finetune LLMs Notebooks & Guides
 
-- [LLaMA-2 from the Ground Up](https://cameronrwolfe.substack.com/p/llama-2-from-the-ground-up)
-- [Fine-Tuning Llama-2 LLM on Google Colab: A Step-by-Step Guide.](https://medium.com/@csakash03/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-cf7bb367e790)
-- [How to Fine-Tune an LLM Part 2: Instruction Tuning Llama 2](https://wandb.ai/capecape/alpaca_ft/reports/How-to-Fine-Tune-an-LLM-Part-2-Instruction-Tuning-Llama-2--Vmlldzo1NjY0MjE1)
-- [Multiple tasks for one fine-tuned LLM](https://discuss.huggingface.co/t/multiple-tasks-for-one-fine-tuned-llm/31262/3)
-- [Fine-tune Llama 2 with Limited Resources](https://www.union.ai/blog-post/fine-tune-llama-2-with-limited-resources)
-- [Llama_2_7b_chat_hf_sharded_bf16_INFERENCE.ipynb](https://colab.research.google.com/drive/1zxwaTSvd6PSHbtyaoa7tfedAS31j_N6m)
-- [fLlama_bnb_Inference.ipynb](https://colab.research.google.com/drive/1Ow5cQ0JNv-vXsT-apCceH6Na3b4L7JyW?usp=sharing#scrollTo=tMmDSVVaIfPF)
-- []()
-
-### Distributed Fine-tuning LLMs
-
-#### FSDP
-
 <details>
 
 <summary>Fine-tune Code Generation Prompt:</summary>
@@ -93,3 +80,68 @@ Finetune Huggingface Datasets:
 3C) Supported Tasks: multiple-choice question answering
 
 </details>
+
+- [LLaMA-2 from the Ground Up](https://cameronrwolfe.substack.com/p/llama-2-from-the-ground-up)
+- [Fine-Tuning Llama-2 LLM on Google Colab: A Step-by-Step Guide.](https://medium.com/@csakash03/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-cf7bb367e790)
+- [How to Fine-Tune an LLM Part 2: Instruction Tuning Llama 2](https://wandb.ai/capecape/alpaca_ft/reports/How-to-Fine-Tune-an-LLM-Part-2-Instruction-Tuning-Llama-2--Vmlldzo1NjY0MjE1)
+- [Multiple tasks for one fine-tuned LLM](https://discuss.huggingface.co/t/multiple-tasks-for-one-fine-tuned-llm/31262/3)
+- [Fine-tune Llama 2 with Limited Resources](https://www.union.ai/blog-post/fine-tune-llama-2-with-limited-resources)
+- [Llama_2_7b_chat_hf_sharded_bf16_INFERENCE.ipynb](https://colab.research.google.com/drive/1zxwaTSvd6PSHbtyaoa7tfedAS31j_N6m)
+- [fLlama_bnb_Inference.ipynb](https://colab.research.google.com/drive/1Ow5cQ0JNv-vXsT-apCceH6Na3b4L7JyW?usp=sharing#scrollTo=tMmDSVVaIfPF)
+- []()
+
+### Distributed Fine-tuning LLMs across Multiple Nodes & GPUs
+
+#### FSDP - Fully Sharded Data Parallel
+
+Fully Sharded Data Parallel (FSDP) enables efficient training of large neural networks across multiple GPUs and nodes by distributing the model's parameters across devices. 
+
+2 GPUs per node and a total of 2 nodes (4 GPUs total) 
+
+FSDP shards the model parameters of each layer split into 4 parts distribut across the 4 GPUs, with each GPU holding only a portion (shard) of the parameters for every layer.
+
+For example, Layer 1's parameters are split into 4 shards, one shard per GPU:
+- GPU 1 (Node 1) holds shard 1
+- GPU 2 (Node 1) holds shard 2
+- GPU 3 (Node 2) holds shard 3
+- GPU 4 (Node 2) holds shard 4
+
+**1. Forward Pass with All-Gather**
+
+- All-Gather for Input Processing:
+ - When you forward data through a layer, FSDP first all-gathers the layer’s sharded parameters across all GPUs. This means that each GPU will temporarily hold a complete copy of the parameters for that layer.
+ - All four shards of the layer parameters (from all GPUs) are gathered, so that each GPU can perform the forward pass for the complete layer.
+
+- Local Computation:
+
+ - After all-gathering, each GPU has the full layer’s parameters and processes its local portion of the input batch through the layer.
+ - Each GPU computes the output for its share of the input data using the full set of parameters (that were all-gathered).
+
+- Proceeding to the Next Layer:
+
+- After each layer’s forward pass is computed, the model parameters that were all-gathered are discarded from memory, and only the sharded portion is kept on each GPU.
+- The process repeats for each subsequent layer.
+
+**2. Backward Pass with Reduce-Scatter**
+
+During the backward pass, gradients need to be computed and distributed across the GPUs to update the sharded parameters correctly.
+
+- Backward Pass Steps:
+
+- Local Gradient Computation:
+
+ - Each GPU calculates the gradients locally using the outputs from the forward pass for its input data shard. However, since each GPU only holds part of the model’s parameters, these gradients need to be synchronized across GPUs.
+
+ - Reduce-Scatter for Gradients:
+ - Once local gradients are computed, FSDP performs a reduce-scatter operation.
+ - This step involves summing the gradients across all GPUs (as each GPU holds the gradient for the same parameters across different input shards).
+ - The summed gradients are then scattered back, with each GPU receiving only the gradients corresponding to the portion of the model parameters it is responsible for (i.e., the sharded parameters).
+
+- Weight Update:
+ - After the reduce-scatter, each GPU has the correct accumulated gradients for its shard of the model parameters.
+ - Each GPU locally updates its shard of the model parameters using these gradients.
+
+- Proceeding to the Next Layer:
+  - The process is repeated in reverse order (from the last layer to the first) during the backward pass.
+ 
+ 
