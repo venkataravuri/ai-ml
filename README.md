@@ -14,6 +14,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [LLMs Benchmarking & Evaluation](docs/gen-ai/evaluation-metrics.md)
 - [Fine-tune LLMs](docs/gen-ai/finetune-llms.md)
 - [LLM Inference & Serving](docs/gen-ai/llm-inference.md)
+  - [LLM Guardrails](https://github.com/guardrails-ai/guardrails/blob/main/README.md)
 - [Autonomus AI Agents](docs/gen-ai/llm-powered-autonomous-ai-agents.md)
   - [AI Agent Architecture](docs/gen-ai/ai-agents-overview.md)
   - [LangChain](docs/gen-ai/langchain.md)
