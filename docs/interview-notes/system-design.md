@@ -17,6 +17,9 @@ Refer to, [Ad Click Prediction | Machine learning system design](https://medium.
 - [How to Build a Customer Churn Prediction Model in Python? ](https://365datascience.com/tutorials/python-tutorials/how-to-build-a-customer-churn-prediction-model-in-python/)
 
 ###  Design a feed recommendation system
+
+- [Recommender Systems — A Complete Guide to Machine Learning Models](https://towardsdatascience.com/recommender-systems-a-complete-guide-to-machine-learning-models-96d3f94ea748)
+
 ### Design Youtube(Google)
 ### Design Google contact ranking(Google)
 ### Design an item replacement recommendation(Instacart)
