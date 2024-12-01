@@ -7,7 +7,7 @@
 ### Use Cases
 
 - [Generating Driving Scenes with Diffusion](https://arxiv.org/pdf/2305.18452)
-- [Scene Control, a framework for controllable traffic scene generation](https://waabi.ai/scenecontrol/)
+- [Scene Control, a framework for controllable traffic scene generation](https://waabi.ai/scenecontrol/) - A diffusion-based approach to controllable traffic scene generation for autonomous vehicles.
 
 ### Hands-on Tutorial
 - [Huggingface diffuser tutorial](https://huggingface.co/docs/diffusers/index)
