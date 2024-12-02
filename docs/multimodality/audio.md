@@ -3,10 +3,12 @@
 - [Concepts]()
 - [Speech-to-Text (STT) Models]()
   - [Whisper]()
+  - [Fine-tune Whisper]()
 - [Text-to-Speech (TTS) Models]()
   - ?
 - [Speech-to-Speech Models]()
   - ?
+- [Realworld Use Cases]()
 
 ## Concepts
 ### What Does Frequency Mean in Audio?
@@ -50,14 +52,24 @@ Above x-axis is time, y-axis (frequency) to log scale, and the “color” axis 
 
 ### How to create spectrograms from raw audio?
 
-
-
 Spectograms are created using Fast Fourier Transform (FFT) function that converts audio signal in the time domain into frequency domain. The magnitude of each frequency present in the audio is plotted onto a graph.
 
 You can apply CNN algorithms on Sepctograms. 
 
 The difference between a spectrogram and a Mel-spectrogram is that a Mel-spectrogram converts the frequencies to the mel-scale. The mel-scale is “a perceptual scale of pitches judged by listeners to be equal in distance from one another”
 
-- [Fine-tune OpenAI’s Whisper Automatic Speech Recognition (ASR) Model](https://medium.com/graphcore/fine-tune-openais-whisper-automatic-speech-recognition-asr-model-394b5a4838fb)
+## Speech-to-Text Models
+
+### OpenAI Whisper
+
+<img src=https://cdn-images-1.medium.com/v2/resize:fit:800/1*aSdK_bRq3bhrXpP_TdgIHg.png" />
+
+:star::star::star: [Decoding Whisper: An In-Depth Look at its Architecture and Transcription Process](https://amgadhasan.substack.com/p/whisper-how-to-create-robust-asr-46b)
+
 - [Audio Deep Learning Made Simple: Sound Classification, Step-by-Step - An end-to-end example and architecture for audio deep learning’s foundational application scenario, in plain English](https://towardsdatascience.com/audio-deep-learning-made-simple-sound-classification-step-by-step-cebc936bbe5)
+- 
+### Fine-tune Whisper
+- [Fine-tune OpenAI’s Whisper Automatic Speech Recognition (ASR) Model](https://medium.com/graphcore/fine-tune-openais-whisper-automatic-speech-recognition-asr-model-394b5a4838fb)
+
+## Real-world Use Cases
 - [AI Powered Call Center Intelligence Accelerator](https://github.com/amulchapla/AI-Powered-Call-Center-Intelligence)
