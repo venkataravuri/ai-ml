@@ -24,6 +24,9 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
 - [Latent Diffusion Models](docs/gen-ai/latent-diffusion.md)
 - [Mulitmodality](docs/multimodality/multimodality.md)
 
+### Audio Models - Speech-to-Text, Text-to-Speech, Speech-to-Speech
+- [ASR Models](https://github.com/venkataravuri/ai-ml/blob/master/docs/multimodality/audio.md)
+
 ## Machine Learning
 - [Concepts](docs/ml/ml-concepts.md)
 - Traditional ML Models
