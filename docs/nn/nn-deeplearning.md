@@ -1,8 +1,14 @@
 # Neural Networks & Deep Learning
 
+## Pytorch
+
+### Tensor Operations
+
+Tensor Operations <a target="_blank" href="https://colab.research.google.com/github/venkataravuri/ai-ml-models/blob/main/3-deeplearning-with-pytorch/1-basics/1-tensor-operations.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ### Artificial Neuron / Perceptron
 
-<img src="https://miro.medium.com/v2/resize:fit:640/1*sPg-0hha7o3iNPjY4n-vow.jpeg" width="50%" height="50%" />
+<img src="https://miro.medium.com/v2/resize:fit:640/1*sPg-0hha7o3iNPjY4n-vow.jpeg" width="40%" height="40%" />
 
 #### Forward Pass
 
