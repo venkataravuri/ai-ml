@@ -42,7 +42,7 @@ A curated list of awesome AI & ML :orange_book: tutorials, :page_with_curl: arti
   - [Semantic/Vector Search](https://github.com/venkataravuri/awesome-tech-articles-blogs/blob/master/topics/architecture-design/search.md)
   
 ## Neural Networks
-- [Concepts](docs/nn/nn-deeplearning.md)
+- [Concepts](docs/nn/nn-deeplearning.md), [Pytorch](docs/nn/nn-deeplearning.md)
 - [Convolutional Neural Networks](docs/nn/cnn.md)
 
 ## Basics - Algebra & Statistics
