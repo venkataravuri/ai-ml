@@ -7,6 +7,17 @@
 ### How do you handle padding in sequences during training? ### Discuss strategies for effective padding management.
 
 ### What are system tokens in Llama Models?
+```
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful AI assistant for travel tips and recommendations<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+What can you help me with?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+```
+- **<|begin_of_text|>**: This is equivalent to the BOS token
+- **<|eot_id|>**: This signifies the end of the message in a turn.
+- **<|start_header_id|>**{role}**<|end_header_id|>**: These tokens enclose the role for a particular message. The possible roles can be: system, user, assistant.
+- **<|end_of_text|>**:	This is equivalent to the EOS token. On generating this token, Llama 3 will cease to generate more tokens
 
 ### What is the significance of setting a maximum sequence length? How does it affect model performance and memory usage?
 
