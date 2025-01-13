@@ -5,6 +5,40 @@ PEFT Finetuning is Parameter Efficient Fine Tuning, a set of fine-tuning techniq
 PEFT techniques usually work by reducing the number of trainable parameters in a neural network. The most famous and in-use PEFT techniques are Prefix Tuning, P-tuning, LoRA, etc. LoRA is perhaps the most used one.
 
 ### Can you explain the differences between LoRA and QLoRA? How do you implement LoRA in a model?
+
+**QLORA**
+
+> BitsandBytes library takes care of the 4-bit quantization and the whole low-precision storage and high-precision compute part.
+
+```python
+import torch
+from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+
+model_id = "EleutherAI/gpt-neox-20b"
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+) # setup bits and bytes config
+
+model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map={"":0})
+
+model.gradient_checkpointing_enable()
+model = prepare_model_for_kbit_training(model) # prepares the whole model for kbit training
+
+config = LoraConfig(
+    r=8, 
+    lora_alpha=32, 
+    target_modules=["query_key_value"], 
+    lora_dropout=0.05, 
+    bias="none", 
+    task_type="CAUSAL_LM"
+)
+
+model = get_peft_model(model, config) # Now you get a model ready for QLoRA training
+```
         
 ### What is the role of Unsloth in accelerating fine-tuning processes? How does it improve memory efficiency and speed?
 
