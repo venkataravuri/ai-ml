@@ -1,4 +1,8 @@
-### What is Parameter-Efficient Fine-Tuning (PEFT)?
+#### What is Parameter-Efficient Fine-Tuning (PEFT)?
+
+PEFT Finetuning is Parameter Efficient Fine Tuning, a set of fine-tuning techniques that allows you to fine-tune and train models much more efficiently than normal training.
+
+PEFT techniques usually work by reducing the number of trainable parameters in a neural network. The most famous and in-use PEFT techniques are Prefix Tuning, P-tuning, LoRA, etc. LoRA is perhaps the most used one.
 
 ### Can you explain the differences between LoRA and QLoRA? How do you implement LoRA in a model?
         
