@@ -16,9 +16,16 @@ Refer to, [Ad Click Prediction | Machine learning system design](https://medium.
 
 - [How to Build a Customer Churn Prediction Model in Python? ](https://365datascience.com/tutorials/python-tutorials/how-to-build-a-customer-churn-prediction-model-in-python/)
 
-###  Design a feed recommendation system
+###  Design a recommendation system
+
+<details>
+  
+<summary>Answer</summary>
 
 - [Recommender Systems — A Complete Guide to Machine Learning Models](https://towardsdatascience.com/recommender-systems-a-complete-guide-to-machine-learning-models-96d3f94ea748)
+- [What Is a Recommendation System?](https://www.nvidia.com/en-us/glossary/recommendation-system/)
+
+</details>
 
 ### Create an automated anomaly detection system for business metrics? - The solution should cover statistical methods and time series analysis.
 <details>
