@@ -20,6 +20,27 @@ Refer to, [Ad Click Prediction | Machine learning system design](https://medium.
 
 - [Recommender Systems — A Complete Guide to Machine Learning Models](https://towardsdatascience.com/recommender-systems-a-complete-guide-to-machine-learning-models-96d3f94ea748)
 
+### Create an automated anomaly detection system for business metrics? - The solution should cover statistical methods and time series analysis.
+<details>
+  
+<summary>Answer</summary>
+
+#### 1. **Data Collection and Preprocessing**
+   - **Metrics Identification**: Identify the key business metrics (e.g., revenue, website traffic, transaction volume) that need to be monitored for anomalies.
+   - **Data Cleaning**: Handle missing values, outliers, and noise in the data. This could involve techniques like imputation or smoothing.
+#### 2. **Time Series Analysis**
+   - **Trend and Seasonality Detection**: Identify the trends and seasonality in the business metrics. This can be done using decomposition methods like **STL** (Seasonal-Trend decomposition using LOESS) or models such as **ARIMA** or **SARIMA**.
+   - **Stationarity Check**: Use statistical tests like the **Augmented Dickey-Fuller (ADF)** test to check if the time series is stationary. If not, apply transformations such as differencing or logarithmic scaling.
+   - **Time Series Forecasting**: Use models like **ARIMA**, **Prophet**, or **LSTM** networks for forecasting the expected behavior of the business metrics over time.
+#### 3. **Statistical Methods for Anomaly Detection**
+   - **Z-Score**: Calculate the z-score for the data points. Points that fall outside a predefined threshold (e.g., 3 standard deviations from the mean) are flagged as anomalies.
+   - **Modified Z-Score (for skewed data)**: If the data is not normally distributed, use the modified Z-score, which is more robust against outliers.
+   - **Percentile-based Detection**: Calculate the percentile range (e.g., 1st and 99th percentiles) and flag points that fall outside this range as anomalies.
+   - **Autoregressive Integrated Moving Average (ARIMA) residuals**: Anomalies can be detected based on the residuals of an ARIMA model. Large residuals that exceed a threshold would indicate anomalies.
+   - **Isolation Forests or Local Outlier Factor (LOF)**: These machine learning models are good at detecting anomalies in high-dimensional business data.
+
+</details>
+
 ### Design Youtube(Google)
 ### Design Google contact ranking(Google)
 ### Design an item replacement recommendation(Instacart)
