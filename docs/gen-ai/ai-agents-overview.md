@@ -4,6 +4,15 @@ Language model powered AI agents and state machines have emerged as a promising 
 
 The structure and design pattern of an LLM program is commonly called **cognitive architecture**.
 
+## Autonomous AI Agents
+- [Agent GPT](https://agentgpt.reworkd.ai/) - An web-based autonoums AI agent.
+- [Auto GPT](https://github.com/Significant-Gravitas/Auto-GPT) - Auto-GPT is an experimental open-source application showcasing the capabilities of the GPT-4 language model.
+- [Godmode Space](https://godmode.space/) - Godmode is a web platform to access the powers of autoGPT and babyAGI.
+
+:star::star::star: [LangChain](https://python.langchain.com/en/latest/index.html) Framework to build Automous AI Agent
+
+:tv: :star: [LangChain Tutorials](https://www.youtube.com/@lucidateAI)
+
 ## Agent Architecture
 
 The key components in AI Agentic framework are:

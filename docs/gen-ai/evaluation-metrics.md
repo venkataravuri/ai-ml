@@ -27,6 +27,15 @@ View in [MIRO Board](https://miro.com/app/board/uXjVN_e-aEM=/?share_link_id=1059
 
 A quick overview of few commonly used evalution metrics along with Google Colab Notebooks to evaluate metrics.
 
+
+### LLM Evaluation Libraries & Metrics
+
+Perplexity (PPL) is one of the most common metrics for evaluating language models. 
+https://huggingface.co/docs/transformers/perplexity
+
+https://github.com/openai/evals
+
+
 ## Text Summarization Metrics
 
 **Extractive vs Abstractive**

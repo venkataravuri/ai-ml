@@ -31,6 +31,16 @@
    - [Plan and Execute Prompt](#plan-and-execute-prompting)
    - [Retrieval and Augment Prompts](#retrieval-augmented-generation)
 
+### Prompt Engineering Guide
+##### Guides
+- :star::star: [Learn Prompting](https://learnprompting.org/docs/intro)
+- :star: [Prompt Engineering Guide](https://www.promptingguide.ai/)
+##### Videos
+- :star::star::star::tv: [ChatGPT Prompt Engineering Level Up in 8 Minutes](https://www.youtube.com/watch?v=Qos2rG3zVAM)
+- :star::star: [ChatGPT Prompt Engineering: The Human Reasoning Super Prompt ](https://www.youtube.com/watch?v=S4GfRQ9zIj4)
+- Watch entire playlist here, [Prompt Engineering Playlist](https://www.youtube.com/watch?v=S4GfRQ9zIj4&list=PL6o08pkcQol7-TlFJl05pEEp4hw418DmM)
+- :star::star::star: :tv: [Prompt Engineering by Matt Wolfe](https://www.youtube.com/watch?v=pc8ftlzB2D0)
+
 ## Pre-read: Introduction to LLMs
 
 Understanding functioning and constraints of Language Models (LLMs) enables you to effectively formulate prompts that yield the desired outcomes.
