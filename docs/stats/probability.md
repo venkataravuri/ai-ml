@@ -60,12 +60,39 @@ Probability, odds ratios and log odds are all the same thing, just expressed in 
 
 ### Likelihood Vs. Probability
 
-The terms "likelihood" and "probability" refer to the likelihood of events occurring.
+Probability and likelihood use the same formula, P(data | hypothesis), but you hold different things fixed.
 
-The term "probability" refers to the possibility of something happening.
-The term "Likelihood" refers to the process of determining the best data distribution given a specific situation in the data.
+Probability: the hypothesis is fixed, the data is unknown. You predict.
+Likelihood: the data is fixed, the hypotheses compete. You compare explanations.
 
-Now suppose we flip the coin 100 times and it only lands on heads 17 times. We would say that the likelihood that the coin is fair is quite low. If the coin was actually fair, we would expect it to land on heads much more often as P(Heads) = 0.5 usually.
+Fair die example
+
+	Probability (forward)	Likelihood (backward)
+Known	The die is fair	You rolled 6, 6, 6
+Question	Chance the next roll is a 6?	How well does “fair die” explain 6, 6, 6?
+Answer	1/6 ≈ 16.7%	(1/6)³ ≈ 0.46% for fair; 100% for the all-sixes die
+
+The all-sixes hypothesis wins, because it explains the data far better.
+
+Shampoo example
+
+	Probability (forward)	Likelihood (backward)
+Known	The shopper is a normal shopper	Cart holds 15 shampoo bottles
+Question	Chance a normal shopper buys 15 bottles?	How well does “normal shopper” explain 15 bottles?
+Answer	Very low	Low for normal shopper; high for hotel owner
+
+The hotel owner hypothesis wins.
+
+One-line takeaway
+
+Probability asks, “Given this theory, what will happen?” Likelihood asks, “Given what happened, which theory explains it best?”
+
+Two things worth remembering
+
+Likelihood is a score for the hypothesis, not for the data. The data never changes; the hypotheses are what you swap and grade.
+Likelihood values don’t need to sum to 1 across hypotheses, unlike probabilities across outcomes. That’s why we only use them to compare hypotheses against each other (this is the basis of maximum likelihood estimation: pick the hypothesis with the highest score).
+
+Quick memory trick: replace “likelihood” with “explanation strength.”
 
 ## Probability Distribution
 
